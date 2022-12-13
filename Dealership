@@ -1,3 +1,5 @@
+//Beginner dealership Application.
+
 import java.util.Scanner;
 
 public class Dealership {
