@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Dealership {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Welcome to the Java Dealership!");
+
+        System.out.println("\n - Select option 'a' to buy a car");
+        System.out.println("\n - Select option 'b' to sell a car");
+
+        String option = scan.nextLine();
+
+        switch (option) {
+            case "a": 
+                System.out.println("What is your budget?");
+                int budget = scan.nextInt();
+                if (budget >= 10000) {
+                    System.out.println("Great! A Nissan is available");
+                    System.out.println("\nDo you have insurance?");
+                    scan.nextLine();
+                    String insurance = scan.nextLine();
+                    System.out.println("\nDo you have a DL?");
+                    String license = scan.nextLine();
+                    System.out.println("\nWhat is your credit score");
+                    int creditScore = scan.nextInt();
+                    if (insurance.equals("yes") && license.equals("yes") && creditScore > 660) {
+                        System.out.println("Sold! pleasure doing business with ya!");
+                    } else {
+                        System.out.println("Sorry, you're not eligible");
+                    }
+                } else {
+                    System.out.println("We don't sell cheap cars");
+                }
+            break;
+            case "b": 
+                System.out.println("\nWhat is your car value?");
+                int value = scan.nextInt();
+
+                System.out.println("\nWhat is your selling price?");
+                int price = scan.nextInt();
+
+                scan.nextLine();
+
+                if (value > price && price < 30000) {
+                    System.out.println("We'll buy your car");
+                } else {
+                    System.out.println("Sorry, Not interested!");
+                }
+
+
+            break;
+            default: System.out.println("Invalid Option");
+        }
+        scan.close();
+    }
+}
